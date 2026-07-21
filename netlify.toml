@@ -1,0 +1,6 @@
+[build]
+  publish = "outputs/agently-mobile"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"

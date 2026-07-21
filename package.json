@@ -1,0 +1,13 @@
+{
+  "name": "kobits",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test:function": "node --test netlify/functions/run-agent.test.mjs",
+    "check": "node --check netlify/functions/run-agent.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
