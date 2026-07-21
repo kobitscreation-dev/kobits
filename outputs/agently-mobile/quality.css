@@ -1,0 +1,98 @@
+/* Final interaction and checkout polish. Uses the existing Kobits palette only. */
+html { scroll-behavior: smooth; }
+body { overscroll-behavior-y: none; }
+body.modal-open { overflow: hidden; }
+
+/* Keep the background still while allowing long checkout sheets to scroll. */
+.modal.open .sheet {
+  max-height: min(88dvh, 760px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.modal.open .hire-sheet { padding-bottom: max(25px, env(safe-area-inset-bottom)); }
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--soft);
+  outline-offset: 2px;
+}
+
+.bottom-nav { z-index: 6; }
+/* Sheets are true overlays: payment must sit above the fixed navigation. */
+.modal { z-index: 20; }
+.agent-scroll,
+.categories,
+.chip-row,
+.owner-agents { scroll-snap-type: x proximity; scroll-padding-left: 20px; -webkit-overflow-scrolling: touch; }
+.agent-card,
+.category,
+.chip,
+.owner-agent-card { scroll-snap-align: start; }
+
+.agent-card,
+.category,
+.primary-button,
+.quick-brief button,
+.package-option,
+.bottom-nav button,
+.avatar { min-height: 44px; }
+.primary-button { transition: transform .16s ease, opacity .16s ease, background-color .16s ease; }
+.primary-button:active { transform:scale(.985); }
+.primary-button:disabled { cursor: wait; opacity: .68; }
+
+.checkout-assurance {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 13px 0 0;
+  padding: 11px 12px;
+  border-radius: 10px;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.checkout-assurance b { color: var(--green); font-size: 14px; line-height: 1; }
+.checkout-assurance strong { display:block; font-size:11px; margin-bottom:2px; }
+
+.checkout-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 16px 0 0;
+}
+.checkout-steps span {
+  border-top: 2px solid var(--line);
+  padding-top: 6px;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.25;
+}
+.checkout-steps span:first-child { border-color: var(--green); color: var(--ink); font-weight: 700; }
+
+.brief-help,
+.checkout-choice {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.checkout-choice { color: var(--green); font-weight: 700; min-height: 16px; }
+
+.search-clear {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 12px auto;
+  display: none;
+}
+.search-clear.visible { display: block; }
+
+.empty-state .secondary-button { margin-top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

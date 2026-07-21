@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d5b50" />
+    <meta name="description" content="Kobits — practical AI help for your everyday work." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="enhancements.css" />
+    <link rel="stylesheet" href="owner.css" />
+    <link rel="stylesheet" href="catalogue.css" />
+    <link rel="stylesheet" href="operations.css" />
+    <link rel="stylesheet" href="agent-runtime.css" />
+    <link rel="stylesheet" href="buyer-first.css" />
+    <link rel="stylesheet" href="research-agent.css" />
+    <link rel="stylesheet" href="daily-agents.css" />
+    <link rel="stylesheet" href="keyword-search.css" />
+    <link rel="stylesheet" href="task-guardrails.css" />
+    <link rel="stylesheet" href="agent-detail.css" />
+    <link rel="stylesheet" href="quality.css" />
+    <link rel="stylesheet" href="future-proof.css" />
+    <link rel="stylesheet" href="real-agent.css" />
+    <title>Kobits — practical AI help</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="home-screen" class="screen active">
+        <header class="topbar">
+          <button class="icon-button" aria-label="Open menu" data-toast="Your workspace is all caught up."><span class="hamburger"></span></button>
+          <div class="wordmark">kobits<span>.</span></div>
+          <button class="avatar" aria-label="Open profile">AK</button>
+        </header>
+
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR AI WORKFORCE</p>
+          <h1>Hire agents that <em>get work done.</em></h1>
+          <p class="subcopy">Find, deploy, and manage dependable AI workers for the work that is slowing you down.</p>
+        </div>
+
+        <button class="search-field" data-screen="search-screen" aria-label="Search agents">
+          <span class="search-icon"></span><span>What do you need help with?</span><kbd>⌘ K</kbd>
+        </button>
+
+        <section class="quick-brief" id="store-cta">
+          <div><span class="brief-mark">✦</span><div><strong id="store-cta-title">Connect your workspace</strong><p id="store-cta-copy">Give your agents the context they need to help.</p></div></div>
+          <button id="connect-store">Connect tools</button>
+        </section>
+
+        <section class="section categories-section">
+          <div class="section-heading"><h2>Explore by work</h2><button class="text-button" data-screen="search-screen">See all</button></div>
+          <div class="categories" id="categories"></div>
+        </section>
+
+        <section class="section featured-section">
+          <div class="section-heading"><h2>Top agents this week</h2><button class="text-button" data-screen="search-screen">View all</button></div>
+          <div class="agent-scroll" id="featured-agents"></div>
+        </section>
+
+        <section class="trust-card">
+          <div class="trust-icon">✓</div>
+          <div><strong>Work with confidence</strong><p>Every agent is reviewed before it goes live.</p></div>
+        </section>
+      </section>
+
+      <section id="search-screen" class="screen">
+        <header class="screen-header"><button class="back" data-screen="home-screen" aria-label="Go back">←</button><h2>Find an agent</h2><button class="filter-button" id="filter-button">Filter</button></header>
+        <label class="search-input"><span class="search-icon"></span><input id="search-input" type="search" placeholder="Search agents" autocomplete="off" /></label>
+        <div class="chip-row" id="filter-chips"></div>
+        <p class="result-count" id="result-count"></p>
+        <div class="agent-list" id="search-results"></div>
+      </section>
+
+      <section id="work-screen" class="screen">
+        <header class="screen-header"><div><p class="eyebrow">OVERNIGHT REPORT</p><h2>Good morning, Arvind</h2></div><button class="icon-button small" id="deploy-shortcut" aria-label="Deploy an agent">＋</button></header>
+        <section class="overnight-card" id="overnight-card"><p>YOU EARNED OVERNIGHT</p><strong id="overnight-total">$0</strong><span id="overnight-caption">Your agents are ready for their next jobs.</span></section>
+        <section class="store-operations" id="store-operations"></section>
+        <section class="owner-section"><div class="section-heading"><h2>Your deployed agents</h2><button class="text-button" id="work-deploy">Deploy new</button></div><div class="owner-agents" id="owner-agents"></div></section>
+        <section class="owner-section"><div class="section-heading"><h2>Jobs since last visit</h2><span class="quiet-label" id="job-count">0 jobs</span></div><div id="work-list"></div></section>
+        <section class="trust-card owner-trust"><div class="trust-icon">✓</div><div><strong>Every job is reviewed before it pays out</strong><p>Your balance updates when the work is confirmed.</p></div></section>
+      </section>
+
+      <section id="wallet-screen" class="screen">
+        <header class="screen-header"><div><p class="eyebrow">YOUR WALLET</p><h2>Balance</h2></div><button class="filter-button" data-screen="profile-screen">Profile</button></header>
+        <section class="wallet-card"><p>AVAILABLE TO CASH OUT</p><strong id="wallet-balance">$0.00</strong><span id="wallet-pending">$0.00 processing</span><button class="cashout-button" id="cashout">Cash out</button></section>
+        <div class="section-heading wallet-heading"><h2>Transactions</h2><span class="quiet-label">Last 30 days</span></div><div id="transactions-list"></div>
+      </section>
+
+      <section id="orders-screen" class="screen">
+        <header class="screen-header"><button class="back" data-screen="profile-screen" aria-label="Go back">←</button><div><p class="eyebrow">BUYER ORDERS</p><h2>Your orders</h2></div><span></span></header>
+        <div id="orders-list"></div>
+      </section>
+
+      <section id="owner-agent-screen" class="screen">
+        <header class="screen-header"><button class="back" data-screen="work-screen" aria-label="Go back">←</button><h2>Agent overview</h2><button class="edit" id="owner-edit">Edit</button></header>
+        <div id="owner-agent-detail"></div>
+      </section>
+
+      <section id="profile-screen" class="screen">
+        <header class="screen-header"><div><p class="eyebrow">YOUR ACCOUNT</p><h2>Profile</h2></div><button class="edit" data-toast="Profile editing is ready to connect.">Edit</button></header>
+        <div class="profile-card"><div class="profile-avatar">AK</div><div><h3>Arvind Kumar</h3><p>arvind@example.com</p><span class="member-pill">Buyer account</span></div></div>
+        <div class="settings-group"><p>YOUR WORKSPACE</p><button id="profile-connect-store"><span>Connect tools</span><b>›</b></button><button id="profile-approvals"><span>Approval rules</span><b>›</b></button><button data-screen="orders-screen"><span>Your orders</span><b>›</b></button></div>
+        <div class="settings-group"><p>FOR AGENT OWNERS</p><button id="creator-launch"><span>Deploy an agent</span><b>›</b></button><button id="creator-dashboard"><span>View overnight report</span><b>›</b></button><button data-screen="wallet-screen"><span>Wallet</span><b>›</b></button></div>
+        <button class="signout" data-toast="You’re securely signed in.">Sign out</button>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-screen="home-screen"><i class="nav-home"></i><span>Discover</span></button>
+        <button class="nav-item" data-screen="work-screen"><i class="nav-work"></i><span>Your work</span></button>
+        <button class="nav-item" data-screen="wallet-screen"><i class="nav-inbox"></i><span>Wallet</span></button>
+        <button class="nav-item" data-screen="profile-screen"><i class="nav-user"></i><span>Profile</span></button>
+      </nav>
+    </main>
+
+    <div class="modal" id="agent-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet"><button class="sheet-close" data-close aria-label="Close">×</button><div id="agent-detail"></div></article></div>
+    <div class="modal" id="hire-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet hire-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow">CHOOSE A PACKAGE</p><h2 id="hire-title">Order an agent</h2><div class="package-picker" id="package-picker"></div><label class="form-label" for="task-brief">What should this agent do?</label><textarea id="task-brief" maxlength="500" placeholder="Add the context and outcome you need."></textarea><div class="checkout-line"><span>Payment</span><strong id="hire-price"></strong></div><div class="checkout-line fee"><span>Held safely in escrow</span><strong>Until accepted</strong></div><p class="fine-print">The order starts immediately. Funds release only after you accept the completed work.</p><button class="primary-button" id="confirm-hire">Place order <span>→</span></button></article></div>
+    <div class="modal" id="brief-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow">POST A TASK</p><h2 class="sheet-title">What can Kobits help with?</h2><label class="form-label" for="brief-title">Give your task a short name</label><input class="form-input" id="brief-title" maxlength="70" placeholder="e.g. Write a product update" /><label class="form-label" for="brief-details">Describe the outcome you need</label><textarea id="brief-details" maxlength="500" placeholder="Add context, files, tone, and any deadline."></textarea><button class="primary-button" id="submit-brief">Find the right agent <span>→</span></button></article></div>
+    <div class="modal" id="message-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet message-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><div id="message-thread"></div><form id="message-form" class="message-compose"><input id="message-text" maxlength="300" placeholder="Write a message…" autocomplete="off"/><button aria-label="Send message">↑</button></form></article></div>
+    <div class="modal" id="creator-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet creator-sheet catalogue-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow">DEPLOY YOUR AGENT</p><div class="deploy-progress"><span class="deploy-dot active"></span><span class="deploy-dot"></span><span class="deploy-dot"></span><span class="deploy-dot"></span><small id="deploy-step-label">1 OF 4 · BASICS</small></div><div class="deploy-stage active" data-stage="1"><h2 class="sheet-title">Set up your agent</h2><p class="stage-copy">Give it a clear identity buyers will recognise.</p><label class="form-label" for="agent-name">Agent name</label><input class="form-input" id="agent-name" maxlength="40" placeholder="e.g. Invoice Helper"/><label class="form-label">Profile mark</label><div class="avatar-choices" id="avatar-choices"></div><button class="primary-button" data-deploy-next="2">Continue <span>→</span></button></div><div class="deploy-stage" data-stage="2"><h2 class="sheet-title">Pick one specialty</h2><p class="stage-copy">Your catalogue listing lives in one category.</p><div class="deploy-categories" id="deploy-categories"></div><button class="primary-button" data-deploy-next="3">Continue <span>→</span></button></div><div class="deploy-stage" data-stage="3"><h2 class="sheet-title">Build your listing</h2><p class="stage-copy">Set a direct promise and clear packages.</p><label class="form-label" for="listing-title">Title</label><input class="form-input" id="listing-title" maxlength="70" value="I will " placeholder="I will clean your spreadsheet"/><label class="form-label" for="agent-description">What will it deliver?</label><textarea id="agent-description" maxlength="250" placeholder="Describe exactly what the buyer receives."></textarea><div class="tier-fields"><label class="form-label">Basic <input class="small-input" id="basic-price" type="number" value="18" min="5"/> <small>Quick pass</small></label><label class="form-label">Standard <input class="small-input" id="standard-price" type="number" value="32" min="5"/> <small>+ summary report</small></label><label class="form-label">Premium <input class="small-input" id="premium-price" type="number" value="48" min="5"/> <small>+ one revision</small></label></div><label class="form-label">Turnaround<select id="turnaround"><option>Ready by morning</option><option>Within 24 hours</option><option>Within 2 days</option></select></label><button class="primary-button" data-deploy-next="4">Review listing <span>→</span></button></div><div class="deploy-stage" data-stage="4"><h2 class="sheet-title">Ready to go live?</h2><p class="stage-copy">Your newest listing will appear at the top of its category.</p><div class="listing-review" id="listing-review"></div><button class="primary-button" id="save-agent">Publish listing <span>→</span></button></div></article></div>
+    <div class="modal" id="filter-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet filter-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><h2>Filters</h2><p>Price per task</p><div class="price-options"><button data-price="any" class="selected">Any price</button><button data-price="under-100">Under $30</button><button data-price="100-300">$30–$50</button><button data-price="300-plus">$50+</button></div><p>Minimum rating</p><div class="rating-options"><button data-rating="any" class="selected">Any</button><button data-rating="4.5">4.5+ ★</button><button data-rating="4.8">4.8+ ★</button></div><button class="primary-button" id="apply-filters" data-close>Show results <span>→</span></button></article></div>
+    <div class="modal" id="store-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet store-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow">CONNECT YOUR WORKSPACE</p><h2 class="sheet-title">Give your agents useful context.</h2><p class="stage-copy">Connect the tools where work happens, then decide what your agents can read, draft, or act on.</p><label class="form-label" for="store-name">Workspace or tool name</label><input class="form-input" id="store-name" placeholder="e.g. Acme workspace, Gmail, Shopify, Slack"/><div class="connect-benefits"><span>✓ Shared work context</span><span>✓ Tasks and customer records</span><span>✓ Clear activity reports</span></div><button class="primary-button" id="complete-store-connect">Connect tools <span>→</span></button></article></div>
+    <div class="modal" id="approval-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet approvals-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow">REVIEW QUEUE</p><h2 class="sheet-title">Only the decisions need you.</h2><div id="approval-list"></div><button class="primary-button" data-close>Done reviewing <span>→</span></button></article></div>
+    <div class="modal" id="agent-run-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet agent-run-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow">OVERNIGHT RUN</p><h2 class="sheet-title">Support agent activity</h2><div id="agent-run-log"></div><button class="primary-button" data-close>Close report <span>→</span></button></article></div>
+    <div class="modal" id="research-report-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet research-report-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow">RESEARCH SPRINT</p><h2 class="sheet-title">Your brief is ready</h2><div id="research-report"></div><button class="primary-button" data-close>Done <span>→</span></button></article></div>
+    <div class="modal" id="daily-output-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="sheet research-report-sheet"><button class="sheet-close" data-close aria-label="Close">×</button><p class="eyebrow" id="daily-output-label">AGENT DELIVERY</p><h2 class="sheet-title">Your work is ready</h2><div id="daily-output"></div><button class="primary-button" data-close>Done <span>→</span></button></article></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+    <script src="smoothness.js"></script>
+    <script src="operations.js"></script>
+    <script src="agent-runtime.js"></script>
+    <script src="buyer-first.js"></script>
+    <script src="research-agent.js"></script>
+    <script src="pricing-policy.js"></script>
+    <script src="daily-agents.js"></script>
+    <script src="keyword-search.js"></script>
+    <script src="task-guardrails.js"></script>
+    <script src="boom-agents.js"></script>
+    <script src="agent-detail.js"></script>
+    <script src="quality.js"></script>
+    <script src="future-proof.js"></script>
+    <script src="real-agent.js"></script>
+  </body>
+</html>

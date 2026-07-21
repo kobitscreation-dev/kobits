@@ -1,0 +1,47 @@
+/* Premium, team-ready surfaces built from the existing Kobits tokens. */
+.workflow-section { margin-top: 32px; }
+.workflow-kicker { color: var(--green); font-size: 10px; font-weight: 760; letter-spacing: .12em; margin: 0 0 7px; }
+.workflow-scroll { display: flex; gap: 11px; overflow-x: auto; padding: 1px 0 5px; scrollbar-width: none; scroll-snap-type: x proximity; }
+.workflow-card { min-width: 244px; min-height: 166px; padding: 15px; text-align: left; border: 1px solid var(--line); border-radius: 16px; background: var(--white); box-shadow: 0 3px 8px #17201e06; scroll-snap-align: start; }
+.workflow-card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+.workflow-card h3 { margin: 0; font-size: 15px; letter-spacing: -.4px; }
+.workflow-card p { margin: 7px 0 12px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.workflow-mark { display:flex; align-items:center; color:var(--green); }
+.workflow-mark i { display:grid; place-items:center; width:27px; height:27px; border-radius:9px; background:var(--soft); border:2px solid var(--white); font-style:normal; font-size:11px; margin-left:-7px; }
+.workflow-mark i:first-child { margin-left:0; }
+.workflow-card small { display:block; padding-top:10px; border-top:1px solid var(--line); color:var(--green); font-size:10px; font-weight:750; letter-spacing:.06em; }
+
+.workspace-hero { padding: 10px 0 22px; border-bottom: 1px solid var(--line); }
+.workspace-hero h1 { font-size: 30px; line-height:1.08; letter-spacing:-1.4px; margin: 0; }
+.workspace-hero h1 em { font-family: Georgia, serif; font-weight:400; }
+.workspace-hero p { color:var(--muted); font-size:13px; line-height:1.5; margin:11px 0 0; }
+.future-card { border:1px solid var(--line); border-radius:16px; background:var(--white); padding:15px; margin-top:18px; }
+.future-card.soft { background:var(--soft); border:0; }
+.future-card h2 { font-size:15px; margin:0 0 5px; }
+.future-card > p { color:var(--muted); font-size:12px; line-height:1.45; margin:0; }
+.trust-points { display:grid; grid-template-columns:1fr 1fr 1fr; gap:7px; margin-top:14px; }
+.trust-points span { border-radius:10px; background:var(--white); padding:9px 8px; font-size:10px; font-weight:700; line-height:1.25; }
+.trust-points b { display:block; color:var(--green); font-size:13px; margin-bottom:4px; }
+.integration-row { display:flex; align-items:center; gap:11px; padding:13px 0; border-bottom:1px solid var(--line); }
+.integration-row:last-child { border-bottom:0; padding-bottom:0; }
+.integration-badge { width:35px; height:35px; border-radius:10px; display:grid; place-items:center; background:var(--soft); color:var(--green); font-weight:800; font-size:11px; flex:none; }
+.integration-copy { min-width:0; flex:1; }
+.integration-copy strong { display:block; font-size:13px; }
+.integration-copy span { display:block; margin-top:3px; color:var(--muted); font-size:11px; }
+.integration-action { color:var(--green); border:1px solid var(--line); border-radius:8px; padding:7px 9px; font-size:11px; font-weight:750; }
+.integration-action.connected { color:var(--ink); background:var(--soft); border-color:transparent; }
+.workflow-selected { margin-top:12px!important; color:var(--green)!important; font-weight:700; }
+.approval-item { display:flex; gap:10px; align-items:flex-start; padding:12px 0; border-bottom:1px solid var(--line); }
+.approval-item:last-child { border-bottom:0; }
+.approval-icon { width:26px; height:26px; border-radius:8px; display:grid; place-items:center; background:var(--soft); color:var(--green); flex:none; font-weight:800; }
+.approval-item strong { display:block; font-size:12px; }
+.approval-item p { color:var(--muted); font-size:11px; line-height:1.4; margin:3px 0 0; }
+.approval-item button { color:var(--green); font-size:11px; font-weight:750; margin-top:7px; padding:0; }
+
+.agent-reliability { display:flex; gap:10px; align-items:flex-start; background:var(--soft); border-radius:13px; padding:13px; margin:18px 0; }
+.agent-reliability b { width:27px; height:27px; border-radius:8px; background:var(--green); color:var(--white); display:grid; place-items:center; flex:none; }
+.agent-reliability strong { font-size:12px; display:block; }
+.agent-reliability p { color:var(--muted); font-size:11px; line-height:1.4; margin:3px 0 0; }
+.orders-assurance { display:flex; gap:10px; border:1px solid var(--line); border-radius:13px; padding:12px; margin:15px 0 0; font-size:11px; line-height:1.4; }
+.orders-assurance b { color:var(--green); font-size:14px; }
+.orders-assurance strong { display:block; font-size:11px; margin-bottom:2px; }
