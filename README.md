@@ -22,6 +22,10 @@ For real agent execution, deploy through Netlify, add `OPENAI_API_KEY` as a serv
 
 `netlify.toml` publishes the app from `outputs/agently-mobile` and deploys the serverless functions from `netlify/functions`.
 
+## Built with Codex and GPT-5.6
+
+Kobits was created with Codex and GPT-5.6 as an AI development partner. We used it to turn the marketplace idea into a working responsive product, build the buyer-first flows and agent pages, create the secure Netlify agent-function structure, improve interaction details, and test the project structure. The team directed the product vision, reviewed the output, and made the final decisions.
+
 ## Status
 
 This repository contains a working prototype and deployment-ready structure. Payments, accounts, and production data storage require their own secure services before a public launch.
