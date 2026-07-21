@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Kobits Agent Helper</title>
+  </head>
+  <body>
+    <main>
+      <header><span class="logo">kobits<span>.</span></span><small>PRIVATE BETA</small></header>
+      <h1>Use an agent<br /><em>where you work.</em></h1>
+      <p class="intro">Capture page context, give one clear task, then review the result.</p>
+
+      <label>Agent
+        <select id="agent">
+          <option value="2">Research Sprint</option>
+          <option value="4">Content Editor</option>
+          <option value="208">PlainSpeak</option>
+          <option value="209">Code Check</option>
+        </select>
+      </label>
+      <button id="capture" class="secondary">Use selected page text</button>
+      <label>Task brief
+        <textarea id="brief" maxlength="4000" placeholder="Explain exactly what you need the agent to do."></textarea>
+      </label>
+      <button id="run" class="primary">Run agent <span>→</span></button>
+
+      <section id="result" aria-live="polite"></section>
+      <details>
+        <summary>Connection settings</summary>
+        <label>Your Kobits website URL
+          <input id="server-url" type="url" placeholder="https://your-kobits-site.netlify.app" />
+        </label>
+        <button id="save-settings" class="secondary">Save connection</button>
+        <p>This saves only the website address—never an API key.</p>
+      </details>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

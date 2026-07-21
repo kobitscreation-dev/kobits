@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Kobits Agent Helper",
+  "version": "0.1.0",
+  "description": "Send selected page context to a task-only Kobits agent.",
+  "permissions": ["storage", "activeTab", "scripting", "permissions"],
+  "optional_host_permissions": ["https://*/*"],
+  "action": {
+    "default_title": "Kobits Agent Helper",
+    "default_popup": "popup.html"
+  }
+}
